@@ -1,6 +1,6 @@
 <header class="w-full p-2">
-    <div class=" mx-auto  container ">
-        <ul class="flex flex-row gap-6 py-2">
+    <div class=" mx-auto  container hidden md:flex justify-start gap-6 py-2 text-sm px-4">
+        <ul class="flex flex-row flex-wrap justify-center md:justify-start gap-4 md:gap-6 py-2 text-sm">
             <li><a href="#" class="">Про нас</a></li>
             <li><a href="#" class="">Відгуки</a></li>
             <li><a href="#" class="">Оплата та доставка</a></li>
@@ -9,32 +9,56 @@
         </ul>
     </div>
 
-        <div class=" border-t border-b py-3 ">
-            <div class="container mx-auto grid grid-cols-3 items-center px-4">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="phone" class="w-6 h-6 "></i>
-                    UA/en
+    <div class=" border-t border-b py-3 ">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-3 items-center">
+
+                <div class="flex items-center">
+                    <button type="button" id="open-menu" class="md:hidden p-1">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                    <div class="hidden md:flex items-center gap-3">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                        UA/en
+                    </div>
                 </div>
 
-                <div class="text-4xl justify-self-center">
+                <div class="hidden md:block text-4xl justify-self-center">
+                    LOGO
+                </div>
+                <div class="block text-4xl md:hidden ">
                     LOGO
                 </div>
 
-                <div class="flex items-center justify-self-end  gap-4">
-                    <div class="flex items-center   bg-gray-400/20 px-2">
-                        <input type="text" class="outline-none p-1 flex-grow">
-                        <i data-lucide="search" class="w-5 h-5"></i>
+
+                <div class="flex items-center justify-end  md:justify-self-end  gap-4">
+                    <div class=" hidden md:flex items-center  bg-gray-400/20 px-2 ">
+                        <input placeholder="Пошук..." type="text"
+                               class="outline-none p-1 w-35 lg:w-45 bg-transparent text-sm">
+                        <button type="button" class="cursor-pointer"><i data-lucide="search"
+                                                                        class="w-5 h-5"></i>
+                        </button>
                     </div>
-                    <span> <i data-lucide="heart" class="w-6 h-6 "></i></span>
-                    <span> <i data-lucide="user" class="w-6 h-6 "></i></span>
-                    <span> <i data-lucide="shopping-bag" class="w-6 h-6 "></i></span>
+                    <button type="button" class="cursor-pointer"><i data-lucide="heart"
+                                                                    class="w-6 h-6 "></i></button>
+                    <button type="button" class="cursor-pointer"><i data-lucide="user"
+                                                                    class="w-6 h-6 "></i></button>
+                    <button type="button" class="cursor-pointer"><i data-lucide="shopping-bag"
+                                                                    class="w-6 h-6 "></i></button>
                 </div>
-
             </div>
-
+            <!--                mobile inp-->
+            <div class=" flex items-center w-full mt-2  bg-gray-400/20 px-2 md:hidden">
+                <input placeholder="" type="text" class="outline-none w-full  p-1">
+                <button type="button" class="cursor-pointer"><i data-lucide="search"
+                                                                class="w-5 h-5"></i></button>
+            </div>
+            <!--            -->
         </div>
-    <div >
-        <ul class="flex flex-row justify-center gap-2 font-light text-lg p-2">
+
+    </div>
+    <div class="hidden md:block">
+        <ul class="flex flex-row justify-center gap-5 font-light text-lg p-2">
             <li>MENU</li>
             <li>MENU</li>
             <li>MENU</li>
@@ -43,9 +67,59 @@
         </ul>
     </div>
 
+
+    <div id="mobile-menu"
+         class="fixed inset-0 bg-white z-[100] p-5 flex flex-col -translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-between items-center mb-8">
+            <div class="text-4xl">LOGO</div>
+            <button id="close-menu"><i data-lucide="x" class="w-8 h-8"></i></button>
+        </div>
+
+        <ul class="flex flex-col gap-6 text-2xl font-light">
+            <hr>
+            <li>MENU</li>
+            <li>MENU</li>
+            <li>MENU</li>
+            <li>MENU</li>
+            <li>MENU</li>
+
+            <span class="border-t  w-full"></span>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Відгуки</a></li>
+            <li><a href="#">Оплата та доставка</a></li>
+            <li><a href="#">Обмін та повернення</a></li>
+            <li><a href="#">Блог</a></li>
+        </ul>
+
+        <div class="mt-auto pt-6 border-t flex flex-col gap-5">
+            <div class="text-xl font-medium">
+                UA / EN
+            </div>
+            <div class="flex items-center gap-3 text-xl">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+                <span>+38 (011) 011 01 01</span>
+            </div>
+        </div>
+
+    </div>
 </header>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
-	lucide.createIcons();
+		lucide.createIcons();
+
+	const openBtn = document.getElementById('open-menu');
+	const closeBtn = document.getElementById('close-menu');
+	const menu = document.getElementById('mobile-menu');
+
+	openBtn.addEventListener('click', () => {
+		menu.classList.remove('-translate-x-full');
+		document.body.style.overflow = 'hidden';
+	});
+
+	closeBtn.addEventListener('click', () => {
+		menu.classList.add('-translate-x-full');
+		document.body.style.overflow = 'auto';
+	});
+
 </script>
