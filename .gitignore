@@ -140,3 +140,8 @@ media/
 .DS_Store
 
 *.sqlite3
+
+other/
+
+package-lock.json
+node_modules
