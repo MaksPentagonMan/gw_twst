@@ -2,6 +2,8 @@
 @source "./mainapp/templates/**/*.html";
 
 
-.my-custom-class {
-    @apply text-red-500;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: '';
+    display: none !important;
 }

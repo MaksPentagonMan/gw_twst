@@ -1,1 +1,33 @@
-<h1>asdsdsdd</h1>
+
+    <div class="swiper main-slider w-full h-[50vh] md:h-[65vh]">
+
+        <div class="swiper-wrapper">
+
+            {% for slide in main_slider %}
+
+            <div class="swiper-slide">
+                <img src="{{ slide.image }}?random={{ slide.id }}"
+                     class=" w-full h-full object-cover">
+
+            </div>
+
+            {% endfor %}
+        </div>
+
+        <div class="swiper-button-prev hidden md:flex !w-10 !h-10 !text-white items-center justify-center">
+            <i data-lucide="chevron-left" class="w-6 h-6 hidden md:flex"></i>
+        </div>
+
+        <div class="swiper-button-next hidden md:flex !w-10 !h-10 !text-white items-center justify-center">
+            <i data-lucide="chevron-right" class="w-6 h-6 hidden md:flex "></i>
+        </div>
+
+        <div class="md:hidden">
+            <div class="swiper-pagination "></div>
+        </div>
+
+    </div>
+
+
+
+
