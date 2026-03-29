@@ -10,9 +10,8 @@
 
     <div class="flex justify-between pt-2 ">
         <p>{{ product.name }}</p>
-        <button><i data-lucide="heart"
-           class="w-6 h-6  "></i>
-        </button>
+        <button class="likes-btn cursor-pointer" value="{{ product.id }}">
+            <i data-lucide="heart"></i> </button>
     </div>
     <div>
         {% if product.available %}
