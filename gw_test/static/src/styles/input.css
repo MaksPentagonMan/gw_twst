@@ -1,6 +1,7 @@
 @import "tailwindcss";
-@source "./mainapp/templates/**/*.html";
-
+/*@source "./mainapp/templates!**!*.html";*/
+@source "../../**/templates/**/*.html";
+@source "../js/**/*.js";
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
