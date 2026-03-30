@@ -15,6 +15,7 @@ export function initFavorites() {
 			
 			if (likes.includes(productId)) {
 				svg.style.fill = '#ef4444';
+				svg.style.stroke = '#ef4444';
 				svg.classList.add('active-like');
 			} else {
 				svg.style.fill = 'none';

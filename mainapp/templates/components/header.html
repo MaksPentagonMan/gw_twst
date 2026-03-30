@@ -36,7 +36,7 @@
                         <input placeholder="Пошук..." type="text"
                                id="desktop-search"
 
-                               class="outline-none p-1 w-35 lg:w-45 bg-transparent text-sm">
+                               class="outline-none p-1 w-35 lg:w-50  h-8 bg-transparent text-lg">
                         <button type="button" class="cursor-pointer search-btn"><i
                                 data-lucide="search"
                                 class="w-5 h-5"></i>
@@ -69,7 +69,8 @@
             md:left-auto md:right-4 md:w-[400px] lg:w-[500px] md:mx-0">
                 <div class="container mx-auto p-4">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-gray-500 uppercase text-sm font-semibold">Результати пошуку</h3>
+                        <h3 class="text-gray-500 uppercase text-sm font-semibold">Результати
+                            пошуку</h3>
                         <button id="close-search" class="  text-gray-400 hover:text-black">
                             <i data-lucide="x" class="w-5 h-5"></i>
                         </button>
@@ -78,26 +79,77 @@
                     <div class="product-result-search flex flex-col gap-6">
                     </div>
 
-                    <button id="show-all-results" class="hidden w-full mt-6 py-3  border cursor-pointer ">
+                    <button id="show-all-results"
+                            class="hidden w-full mt-6 py-3  border cursor-pointer ">
                         Показати всі результати
                     </button>
                 </div>
             </div>
         </div>
-
-
     </div>
-    <div class="hidden md:block">
-        <ul class="flex flex-row justify-center gap-5 font-light text-lg p-2">
-            <li>MENU</li>
-            <li>MENU</li>
-            <li>MENU</li>
-            <li>MENU</li>
-            <li>MENU</li>
-        </ul>
+    <div class="hidden md:block ">
+        <div class="container mx-auto px-4">
+            <div class="relative w-max mx-auto group">
+
+                <ul class="flex flex-row gap-8 font-light text-lg p-3">
+                    <li>
+                        <button class="cursor-pointer ">MENU</button>
+                    </li>
+                    <li>
+                        <button class="cursor-pointer ">MENU</button>
+                    </li>
+                    <li>
+                        <button class="cursor-pointer ">MENU</button>
+                    </li>
+                    <li>
+                        <button class="cursor-pointer ">MENU</button>
+                    </li>
+                    <li>
+                        <button class="cursor-pointer ">MENU</button>
+                    </li>
+                </ul>
+
+                <div class="hidden group-hover:block absolute top-full  left-1/2 -translate-x-1/2 w-[50vw] max-w-screen-xl z-50 bg-white shadow-2xl border border-gray-100">
+                    <div class="flex h-[400px]">
+                        <div class="w-1/2 border-r  p-6 space-y-4">
+                            <button class="menu-item w-full text-left font-bold  flex justify-between items-center group/item active"
+                                    data-target="submenu-1">
+                                Test menu 1
+                                <i data-lucide="chevron-right"
+                                   class="w-4 h-4 opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                            </button>
+                            <button class="menu-item w-full text-left font-bold  flex justify-between items-center group/item"
+                                    data-target="submenu-2">
+                                Test menu 2
+                                <i data-lucide="chevron-right"
+                                   class="w-4 h-4 opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                            </button>
+                        </div>
+
+                        <div class="w-2/3 p-6 ">
+
+                            <div id="submenu-1" class="submenu-content space-y-3">
+                                <a href="#" class="block ">Test menu 1.1</a>
+                                <a href="#" class="block ">Test menu 1.2</a>
+                                <a href="#" class="block ">Test menu 1.3</a>
+                                <a href="#" class="block ">Test menu 1.4</a>
+                                <a href="#" class="block ">Test menu 1.5</a>
+                            </div>
+
+                            <div id="submenu-2" class="submenu-content hidden space-y-3">
+                                <a href="#" class="block ">Test menu 2.1</a>
+                                <a href="#" class="block ">Test menu 2.2</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-
+    <!--    modile menu-->
     <div id="mobile-menu"
          class="fixed inset-0 bg-white z-[100] p-5 flex flex-col -translate-x-full transition-transform duration-300 ease-in-out">
         <div class="flex justify-between items-center mb-8">
@@ -107,11 +159,31 @@
 
         <ul class="flex flex-col gap-6 text-2xl font-light">
             <hr>
-            <li>MENU</li>
-            <li>MENU</li>
-            <li>MENU</li>
-            <li>MENU</li>
-            <li>MENU</li>
+            <li>
+                <button class="flex justify-between items-center w-full text-left py-2 toggle-submenu">
+                    <span>MENU</span>
+                    <i data-lucide="chevron-down" class="w-6 h-6 transition-transform rotate-2 "></i>
+                </button>
+                <ul class="submenu hidden flex flex-col gap-4 pl-4 mt-4 text-xl text-gray-600">
+                    <a href="#" >Test menu 1.1</a>
+                    <a href="#" >Test menu 1.2</a>
+                    <a href="#" >Test menu 1.3</a>
+                    <a href="#" >Test menu 1.4</a>
+                    <a href="#" >Test menu 1.5</a>
+                </ul>
+            </li>
+            <li>
+                <button class="flex justify-between items-center w-full text-left py-2 toggle-submenu">
+                    <span>MENU</span>
+                    <i data-lucide="chevron-down" class="w-6 h-6 transition-transform duration-300"></i>
+                </button>
+                <ul class="submenu hidden flex flex-col gap-4 pl-4 mt-4 text-xl text-gray-600">
+                    <a href="#" >Test menu 2.1</a>
+                    <a href="#" >Test menu 2.2</a>
+
+                </ul>
+            </li>
+
 
             <span class="border-t  w-full"></span>
             <li><a href="#">Про нас</a></li>
@@ -136,18 +208,19 @@
 
 <script>
 
-	const openBtn = document.getElementById('open-menu');
-	const closeBtn = document.getElementById('close-menu');
-	const menu = document.getElementById('mobile-menu');
+	//menu
+	const menuItems = document.querySelectorAll('.menu-item');
+	const submenus = document.querySelectorAll('.submenu-content');
 
-	openBtn.addEventListener('click', () => {
-		menu.classList.remove('-translate-x-full');
-		document.body.style.overflow = 'hidden';
+	menuItems.forEach(item => {
+		item.addEventListener('mouseenter', () => {
+			const targetId = item.getAttribute('data-target');
+
+			submenus.forEach(sub => sub.classList.add('hidden'));
+
+			const targetSub = document.getElementById(targetId);
+			if (targetSub) targetSub.classList.remove('hidden');
+
+		});
 	});
-
-	closeBtn.addEventListener('click', () => {
-		menu.classList.add('-translate-x-full');
-		document.body.style.overflow = 'auto';
-	});
-
 </script>
