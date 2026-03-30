@@ -67,13 +67,16 @@
             </button>
         </div>
 
-        <div class=" order-1  lg:order-2">
-            <img src="{categories.0.images}}" class="w-full  ">
+        {% with category=categories.0 %}
+        <div class="order-1 lg:order-2">
+            <img src="{{ category.image }}?a={{ category.id }}" class="w-full">
         </div>
-
-        <div class="order-3 ">
-            <img src="{{categories.0.images}}" class="w-full  ">
+        {% endwith %}
+        {% with category=categories.2 %}
+        <div class="order-3 lg:order-2">
+            <img src="{{ category.image }}?a={{ category.id }}" class="w-full">
         </div>
+        {% endwith %}
 
         <div class="grid grid-cols-2 gap-4 order-4  ">
             {% include 'components/product_card.html' with product=products.6 %}
