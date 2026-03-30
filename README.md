@@ -8,8 +8,8 @@
 
 2. **Створіть віртуальне середовище**
    ```bash
-   python -m venv venv
-   venv\Scripts\Activate.ps1  # Windows PowerShell
+   py -m venv venv
+   source venv\Scripts\activate  # bush
    ```
 
 3. **Встановіть залежності**
@@ -19,7 +19,7 @@
 
 4. **Запустіть проект**
    ```bash
-   python manage.py runserver
+   py manage.py runserver
    ```
 
 5. **Відкрийте браузер**
@@ -35,3 +35,16 @@
 
 - `GET /` - Головна сторінка
 - `GET /search/?query=<запит>` - Пошук продуктів
+---
+
+## Старт фронта
+
+1. **Встановлення залежностей**
+```bash
+   npm i 
+```
+
+2. **Запуск Таілвінда**
+```bash
+  npm run watch:css
+```
